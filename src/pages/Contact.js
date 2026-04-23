@@ -1,13 +1,20 @@
 import "../App.css";
+
 export default function Contact() {
   return (
     <div className="contact-section">
       <div className="contact-container">
         <div className="contact-info">
-          <h2>Contact Infor</h2>
-          <p>Email: mayostudioeg@gmail.com</p>
-          <p>Phone: +200 01551292377</p>
-          <p>Location: Cairo, Egypt</p>
+          <h2>Contact Info</h2>
+          <div className="info-item">
+            <p><strong>Email:</strong> mayostudioeg@gmail.com</p>
+          </div>
+          <div className="info-item">
+            <p><strong>Phone:</strong> +20 01551292377</p>
+          </div>
+          <div className="info-item">
+            <p><strong>Location:</strong> Cairo, Egypt</p>
+          </div>
         </div>
 
         <div className="contact-form">
@@ -15,7 +22,7 @@ export default function Contact() {
           <input type="text" placeholder="Your Name" />
           <input type="email" placeholder="Your Email" />
           <textarea placeholder="Your Message" rows="5"></textarea>
-          <button>Send Message</button>
+          <button className="submit-btn">Send Message</button>
         </div>
       </div>
     </div>
