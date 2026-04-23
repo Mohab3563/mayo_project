@@ -360,6 +360,8 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+  padding: 10px 20px;
 }
 
 /* Burger hidden in desktop */
@@ -367,32 +369,74 @@ body {
   display: none;
   font-size: 28px;
   cursor: pointer;
+  z-index: 1001;
 }
 
 /* Desktop links */
 .nav-links {
   display: flex;
   gap: 20px;
+  align-items: center;
 }
 
 /* 📱 Mobile */
 @media (max-width: 768px) {
+
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+    flex-wrap: nowrap;
+    position: relative;   /* مهم */
+    overflow: visible;    /* يمنع القص */
+  }
+
+  /* logo left */
+  .logo {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  /* burger right */
   .burger {
     display: block;
+    font-size: 28px;
+    cursor: pointer;
+    flex-shrink: 0;
   }
 
+  /* dropdown menu */
   .nav-links {
     position: absolute;
-    top: 70px;
-    right: 0;
+    top: 60px;
+    right: 0; /* على اليمين مباشرة */
+    
     background: white;
-    flex-direction: column;
     width: 200px;
-    padding: 20px;
-    display: none;
+    max-width: calc(100vw - 20px);
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px;
+
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+
+    /* 🔥 animation */
+    opacity: 0;
+    transform: translateY(-20px);
+    pointer-events: none;
+
+    transition: all 0.4s ease;
   }
 
+  /* active state */
   .nav-links.active {
-    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
   }
 }
