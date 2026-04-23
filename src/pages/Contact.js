@@ -4,7 +4,7 @@ export default function Contact() {
     <div className="contact-section">
       <div className="contact-container">
         <div className="contact-info">
-          <h2>Contact Information</h2>
+          <h2>Contact Infor</h2>
           <p>Email: mayostudioeg@gmail.com</p>
           <p>Phone: +200 01551292377</p>
           <p>Location: Cairo, Egypt</p>
